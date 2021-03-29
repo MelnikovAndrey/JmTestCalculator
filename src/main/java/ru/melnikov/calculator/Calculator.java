@@ -1,6 +1,6 @@
 package ru.melnikov.calculator;
 
-import ru.melnikov.calculator.check.CheckExpression;
+import ru.melnikov.calculator.check.CheckExpressionImpl;
 import ru.melnikov.calculator.convertors.MyConverter;
 
 import java.io.BufferedReader;
@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Calculator {
 
-    private static final CheckExpression EXPRESSION = new CheckExpression();
+    private static final CheckExpressionImpl EXPRESSION = new CheckExpressionImpl();
 
     public static void main(String[] args) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
@@ -30,7 +30,7 @@ public class Calculator {
         }
     }
 
-    public static String arabianCalculation(List<String> list) throws IOException {
+    public static String arabianCalculation(List<String> list) {
         int answer = 0;
         String arithmeticFunction = list.get(1);
 
@@ -48,9 +48,9 @@ public class Calculator {
                 answer = Integer.parseInt(list.get(0)) - Integer.parseInt(list.get(2));
                 break;
         }
-        if (answer <= 0) {
-            throw new IOException("Exception: Invalid response value!!!");
-        }
+//        if (answer <= 0) {
+//            throw new IOException("Exception: Invalid response value!!!");
+//        }
         return String.valueOf(answer);
     }
 

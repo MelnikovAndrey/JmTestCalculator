@@ -2,7 +2,7 @@ package ru.melnikov.calculator.convertors;
 
 import ru.melnikov.calculator.enums.RomanNumerals;
 
-public class MyConverter {
+public class MyConverter implements Converter {
 
     public String toRoman(int n) {
         StringBuilder result = new StringBuilder();
